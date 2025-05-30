@@ -5,14 +5,14 @@ pipeline {
   environment {
     AWS_REGION        = 'ap-southeast-1'
     AWS_ACCOUNT_ID    = '975050299554'
-    ECR_REPO          = 'practical-devops-ecr'
+    ECR_REPO          = 'practical-devops'
     EKS_CLUSTER_NAME  = 'my-eks-cluster'
 
     FRONTEND_TAG      = "frontend-${BUILD_NUMBER}"
     BACKEND_TAG       = "backend-${BUILD_NUMBER}"
 
-    FRONTEND_IMAGE    = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
-    BACKEND_IMAGE     = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
+    FRONTEND_IMAGE    = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}/frontend"
+    BACKEND_IMAGE     = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}/backend"
   }
 
   stages {
