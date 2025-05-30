@@ -51,8 +51,8 @@ pipeline {
     stage('Push Docker Images to ECR') {
       steps {
         sh '''
-          docker push $FRONTEND_IMAGE
-          docker push $BACKEND_IMAGE
+          docker push $FRONTEND_IMAGE:$FRONTEND_TAG
+          docker push $BACKEND_IMAGE:$BACKEND_TAG
         '''
       }
     }
